@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:jamg": "ng build @jamg-angular/ngx-components",
+    "test:jamg": "ng test @jamg-angular/ngx-components --no-watch --no-progress --browsers=ChromeHeadless",
+    "publish:jamg": "npm run test:jamg && npm run build:jamg && npm publish dist/jamg-angular/ngx-components/ --access public",
+    "start:test-bed": "npm run build:jamg && ng serve test-bed-app -o"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +27,7 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.12",
     "@angular/cli": "^17.3.12",
     "@angular/compiler-cli": "^17.3.0",
     "@types/jasmine": "~5.1.0",
@@ -32,6 +37,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
   }
 }
