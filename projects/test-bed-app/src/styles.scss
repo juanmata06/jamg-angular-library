@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind ------------------------------------------------------------------------------------------------------------------- */
+@import "tailwindcss";
+
+/* Main test-bed styles ------------------------------------------------------------------------------------------------------- */
+:root {
+  --black: #333333;
+  --white: #fef8ec;
+  --primary-color: #0353a4;
+  --primary-color-accent: #003049;
+  --primary-text-color: #fef8ec;
+  --secondary-color: #e6e6e6;
+  --secondary-text-color: #333333;
+}
+
+.button-default {
+  @apply bg-white text-gray-700;
+  border: 3px solid var(--secondary-color);
+  &:hover {
+    border: 3px solid var(--black);
+  }
+}
+
+.button-primary {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+  &:hover {
+    border: 3px solid var(--primary-color-accent);
+  }
+}
+
+.button-secondary {
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
+  &:hover {
+    border: 3px solid var(--black);
+  }
+}
